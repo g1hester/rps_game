@@ -1,16 +1,14 @@
+//create rock, paper scissors, game
+//computer selects choice at random
+//player enters choice into browser prompt
+
 const choices = ["rock", "paper", "scissors"];
 
-function computerPlay () {
-
+const getComputerChoice = function(){
+    return 
 };
 
-function playRound (playerSelection, computerSelection){
+const playRound = function (playerSelection, computerSelection){ 
+    return "You lose! Paper beats rock";//choices here are placeholders
+
 };
-
-function playerChoice (){
-    //get random choice for player
-}
-
-function computerChoice (){
-    //get random choice for computer
-}
