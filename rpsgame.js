@@ -5,7 +5,7 @@
 const choices = ["rock", "paper", "scissors"];
 
 const getComputerChoice = function(){
-    return 
+    return "You lose!"
 };
 
 const playRound = function (playerSelection, computerSelection){ 
