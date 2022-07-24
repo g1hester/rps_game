@@ -18,19 +18,22 @@ function playerChoice (){
     return input;
 }
 
+
 function playRound (playerSelection, computerSelection) {
-    playerSelection = playerChoice();
+    playerSelection = playerChoice(); //can move these variable into the global scope if needed
     computerSelection = computerChoice();
-    console.log(playerSelection);//You must console.log "playerSelection" variable instead of playerChoice(), because running playerChoice() function will trigger another input prompt
+    console.log(`Player selected: ${playerSelection}`);//You must console.log "playerSelection" variable instead of playerChoice(), because running playerChoice() function will trigger another input prompt
+    console.log(`Computer selected: ${computerSelection}`);
     
-    //this is a test to ensure playerChoice is executing properly
-    if (playerSelection === "rock") {
-        return "Tie game!";
-    } else {return "Try again, noob!";
+    if (playerSelection === computerSelection) {
+        return "Tie game!";}
 
-    }
+    if ((playerSelection === "rock" && computerSelection === "scissors") || 
+        (playerSelection === "paper" && computerSelection === "rock") || 
+        (playerSelection === "scissors" && computerSelection === "paper")){
+            return "Player Wins!";
+        } else {return "Computer Wins!";}
 }
-
 
 console.log(playRound());
 
