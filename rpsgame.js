@@ -4,20 +4,36 @@
 
 const choices = ["rock", "paper", "scissors"];
 
+function game(){
+    playRound();
+}
+
 function computerChoice(){
     return (choices[Math.floor(Math.random()*choices.length)]);
 }
 
-console.log(computerChoice());
+function playerChoice (){
+   let input = prompt("Enter rock, paper, or scissors");
+   input = input.toLowerCase();
+    return input;
+}
+
+
 
 function playRound (playerSelection, computerSelection) {
-    return "You lose!"
-};
+    playerSelection = playerChoice();
+    computerSelection = computerChoice();
+    
 
-playerSelection = "rock";
-computerSelection = computerChoice();
-if (computerSelection == "rock") {
-    console.log("Tie game!");
+    if (playerSelection === "rock") {
+        return "Tie game!";
+    } else {return "Try again, noob!";
+
+    }
 }
+
+
+console.log(playRound());
+
 
 
