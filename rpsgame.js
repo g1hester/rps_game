@@ -4,11 +4,16 @@
 
 const choices = ["rock", "paper", "scissors"];
 
-const getComputerChoice = function(){
-    return "You lose!"
-};
+function computerChoice(){
+    return (choices[Math.floor(Math.random()*choices.length)]);
+}
 
-const playRound = function (playerSelection, computerSelection){ 
-    return "You lose! Paper beats rock";//choices here are placeholders
+function playRound (playerSelection, computerSelection) {
+    return "You lose! paper beats rock";
+}
 
-};
+playerSelection = "rock";
+computerSelection = computerChoice();
+
+
+console.log(playRound(playerSelection, computerSelection));
