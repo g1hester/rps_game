@@ -8,12 +8,16 @@ function computerChoice(){
     return (choices[Math.floor(Math.random()*choices.length)]);
 }
 
+console.log(computerChoice());
+
 function playRound (playerSelection, computerSelection) {
-    return "You lose! paper beats rock";
-}
+    return "You lose!"
+};
 
 playerSelection = "rock";
 computerSelection = computerChoice();
+if (computerSelection == "rock") {
+    console.log("Tie game!");
+}
 
 
-console.log(playRound(playerSelection, computerSelection));
