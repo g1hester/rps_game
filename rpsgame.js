@@ -14,7 +14,13 @@ function computerChoice(){
 
 function playerChoice (){
     let input = prompt("Enter rock, paper, or scissors");
-    input = input.toLowerCase();//converts player's input into lowercase letters
+    
+    while (input == null) {
+        input = prompt( "Please enter rock, paper, or scissors");
+    }
+    
+    input = input.toLowerCase();//converts player's input into lowercase letters - this needs to come after the "while" check for null
+    
     return input;
 }
 
@@ -26,9 +32,8 @@ function playRound (playerSelection, computerSelection) {
     console.log(`Computer selected: ${computerSelection}`);
     
     if (playerSelection === computerSelection) {
-        return "Tie game!";}
-
-    if ((playerSelection === "rock" && computerSelection === "scissors") || 
+        return "Tie game!";} else if 
+        ((playerSelection === "rock" && computerSelection === "scissors") || 
         (playerSelection === "paper" && computerSelection === "rock") || 
         (playerSelection === "scissors" && computerSelection === "paper")){
             return "Player Wins!";
