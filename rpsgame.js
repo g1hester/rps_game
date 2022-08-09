@@ -9,14 +9,13 @@ let computerScore = 0;
 function game(){
     for (let i = 0; i < 5; i++) {
         playRound();
-        console.log("(Scoreboard)",`Player: ${playerScore}`, `Computer: ${computerScore}`);//
+        console.log("(Scoreboard)",`Player: ${playerScore}`, `Computer: ${computerScore}`);
+        } if (playerScore === computerScore){
+            console.log("Tie Game - Play Again!");
+        } else if (playerScore > computerScore) {
+            console.log("Player Wins - Best of 5!");
+        } else {console.log("Computer Wins - Skynet Prevails!");
     }
-    if (playerScore === computerScore){
-        console.log("Tie Game - Play Again!");
-    } else if (playerScore > computerScore) {
-        console.log("Player Wins - Best of 5!");
-    } else {console.log("Computer Wins - Skynet Prevails!");
-}
 }
 
 function computerChoice(){
@@ -38,18 +37,21 @@ function playRound (playerSelection, computerSelection) {
     computerSelection = computerChoice()
     console.log(`Player selected: ${playerSelection}`);
     console.log(`Computer selected: ${computerSelection}`);
-    console.log(roundWinner(computerSelection, playerSelection));
+    console.log(winner(computerSelection, playerSelection));
 }
 
-function roundWinner (computerSelection, playerSelection){
+function winner(computerSelection, playerSelection){
     if (computerSelection === playerSelection) {
-        return "Tie!";} else if 
+        return "Tie!";} else if
         ((playerSelection === "rock" && computerSelection === "scissors") || 
         (playerSelection === "paper" && computerSelection === "rock") || 
-        (playerSelection === "scissors" && computerSelection === "paper")){playerScore = ++playerScore;
-            return "Player wins the round!";
-        } else {computerScore = ++computerScore;
-                 return "Computer wins the round!";}
+        (playerSelection === "scissors" && computerSelection === "paper")) 
+        {playerScore = ++playerScore;
+        return "Player wins the round!";
+        } else 
+        {computerScore = ++computerScore;
+        return "Computer wins the round!";
+    }
 }
 
 game();
