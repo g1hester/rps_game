@@ -1,12 +1,22 @@
 //create rock, paper scissors, game
 //computer selects choice at random
 //player enters choice into browser prompt
+
 const choices = ["rock", "paper", "scissors"];
+let playerScore = 0;
+let computerScore = 0;
 
 function game(){
     for (let i = 0; i < 5; i++) {
         playRound();
+        console.log("(Scoreboard)",`Player: ${playerScore}`, `Computer: ${computerScore}`);//
     }
+    if (playerScore === computerScore){
+        console.log("Tie Game - Play Again!");
+    } else if (playerScore > computerScore) {
+        console.log("Player Wins - Best of 5!");
+    } else {console.log("Computer Wins - Skynet Prevails!");
+}
 }
 
 function computerChoice(){
@@ -28,20 +38,20 @@ function playRound (playerSelection, computerSelection) {
     computerSelection = computerChoice()
     console.log(`Player selected: ${playerSelection}`);
     console.log(`Computer selected: ${computerSelection}`);
-    console.log(gameWinner(computerSelection, playerSelection));
+    console.log(roundWinner(computerSelection, playerSelection));
 }
 
-function gameWinner (computerSelection, playerSelection){
+function roundWinner (computerSelection, playerSelection){
     if (computerSelection === playerSelection) {
-        return "Tie game!";} else if 
+        return "Tie!";} else if 
         ((playerSelection === "rock" && computerSelection === "scissors") || 
         (playerSelection === "paper" && computerSelection === "rock") || 
-        (playerSelection === "scissors" && computerSelection === "paper")){
-            return "Player Wins!";
-        } else {return "Computer Wins!";}
+        (playerSelection === "scissors" && computerSelection === "paper")){playerScore = ++playerScore;
+            return "Player wins the round!";
+        } else {computerScore = ++computerScore;
+                 return "Computer wins the round!";}
 }
 
-//playRound();
 game();
 
 
