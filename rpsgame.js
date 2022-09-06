@@ -37,10 +37,10 @@ function playRound (playerSelection, computerSelection) {
     computerSelection = computerChoice()
     console.log(`Player selected: ${playerSelection}`);
     console.log(`Computer selected: ${computerSelection}`);
-    console.log(winner(computerSelection, playerSelection));
+    console.log(getWinner(computerSelection, playerSelection));
 }
 
-function winner(computerSelection, playerSelection){
+function getWinner(computerSelection, playerSelection){
     if (computerSelection === playerSelection) {
         return "Tie!";} else if
         ((playerSelection === "rock" && computerSelection === "scissors") || 
