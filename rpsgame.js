@@ -31,10 +31,9 @@ function playerChoice (){
     return input;
 }
 
-
 function playRound (playerSelection, computerSelection) {
-    playerSelection = playerChoice();
-    computerSelection = computerChoice()
+    playerSelection = playerChoice();//playerSelection and computerSelection need to be in this block of code otherwise their selection will return "undefined."  This is because the functions for playerChoice and computerChoice never get called
+    computerSelection = computerChoice();
     console.log(`Player selected: ${playerSelection}`);
     console.log(`Computer selected: ${computerSelection}`);
     console.log(getWinner(computerSelection, playerSelection));
