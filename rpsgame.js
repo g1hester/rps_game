@@ -6,6 +6,8 @@ const choices = ["rock", "paper", "scissors"];
 let playerScore = 0;
 let computerScore = 0;
 
+Test 1
+
 function game(){
     for (let i = 0; i < 5; i++) {
         playRound();
